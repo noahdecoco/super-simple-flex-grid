@@ -31,6 +31,7 @@ export const Row = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: ${() => `0 ${-HALF_GUTTER}px 0`};
+  align-items: ${({ flexAlign }) => (flexAlign ? flexAlign : 'auto')};
 `;
 
 export const Column = styled.div`

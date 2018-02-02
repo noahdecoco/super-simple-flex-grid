@@ -102,6 +102,57 @@ class App extends PureComponent {
           <Row>
             <Column>
               <p>
+                Setting the flexAlign on the row will affect all the columns!
+              </p>
+            </Column>
+          </Row>
+
+          <Container>
+            <Row className={'row'} flexAlign={'flex-end'}>
+              <Column className={'column'}>
+                <div className={'content'}>STAY</div>
+              </Column>
+              <Column className={'column'}>
+                <div className={'content'}>
+                  HIT<br />ROCK<br />BOTTOM
+                </div>
+              </Column>
+              <Column className={'column'}>
+                <div className={'content'}>DOWN</div>
+              </Column>
+            </Row>
+          </Container>
+
+          <Row>
+            <Column>
+              <p>
+                Unless you overide it by setting flexAlign on the column too.
+              </p>
+            </Column>
+          </Row>
+
+          <Container>
+            <Row className={'row'} flexAlign={'flex-end'}>
+              <Column className={'column'}>
+                <div className={'content'}>STAY</div>
+              </Column>
+              <Column className={'column'}>
+                <div className={'content'}>
+                  HIT<br />ROCK<br />BOTTOM
+                </div>
+              </Column>
+              <Column className={'column'}>
+                <div className={'content'}>DOWN</div>
+              </Column>
+              <Column className={'column'} flexAlign={'flex-start'}>
+                <div className={'content'}>NO! flexAlign: flex-start</div>
+              </Column>
+            </Row>
+          </Container>
+
+          <Row>
+            <Column>
+              <p>
                 If you explicitly set the column width, the system is based on a
                 12 column grid. It will wrap the other columns accordingly. To
                 set the width of a column, pass it a flex prop.
