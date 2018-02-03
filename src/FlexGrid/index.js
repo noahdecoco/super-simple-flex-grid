@@ -7,6 +7,25 @@ const HALF_GUTTER = GUTTER / 2;
 
 const getColumsInPercent = value => `${value / 12 * 100}%`;
 
+export const Column = styled.div.attrs({
+  'data-type': 'column',
+})`
+  position: relative;
+  flex: ${({ flex }) => (flex ? `0 0 ${getColumsInPercent(flex)}` : 1)};
+  padding: ${() => `${HALF_GUTTER}px ${HALF_GUTTER}px ${HALF_GUTTER}px`};
+  align-self: ${({ flexAlign }) => (flexAlign ? flexAlign : 'auto')};
+  margin-left: ${({ push }) => (push ? getColumsInPercent(push) : 0)};
+`;
+
+export const Row = styled.div.attrs({
+  'data-type': 'row',
+})`
+  display: flex;
+  flex-wrap: wrap;
+  margin: ${() => `0 ${-HALF_GUTTER}px 0`};
+  align-items: ${({ flexAlign }) => (flexAlign ? flexAlign : 'auto')};
+`;
+
 export const Container = styled.div.attrs({
   'data-type': 'container',
 })`
@@ -25,19 +44,4 @@ export const Container = styled.div.attrs({
   > ${Row}:only-child:not([data-type="container"]) {
     margin: ${() => `${-HALF_GUTTER}px`};
   }
-`;
-
-export const Row = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  margin: ${() => `0 ${-HALF_GUTTER}px 0`};
-  align-items: ${({ flexAlign }) => (flexAlign ? flexAlign : 'auto')};
-`;
-
-export const Column = styled.div`
-  position: relative;
-  flex: ${({ flex }) => (flex ? `0 0 ${getColumsInPercent(flex)}` : 1)};
-  padding: ${() => `${HALF_GUTTER}px ${HALF_GUTTER}px ${HALF_GUTTER}px`};
-  align-self: ${({ flexAlign }) => (flexAlign ? flexAlign : 'auto')};
-  margin-left: ${({ push }) => (push ? getColumsInPercent(push) : 0)};
 `;
