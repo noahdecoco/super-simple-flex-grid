@@ -20,7 +20,7 @@ class App extends PureComponent {
           </Row>
 
           {/* Auto sizing columns */}
-          <Container>
+          <Container gutter={20}>
             <Row>
               <Column>
                 <div className={'content'}>
@@ -33,12 +33,12 @@ class App extends PureComponent {
             <Row>
               <Column>
                 <div className={'content'}>
-                  <h1>Hahaha</h1>
+                  <h1>1</h1>
                 </div>
               </Column>
               <Column>
                 <div className={'content'}>
-                  <h1>Hehehe</h1>
+                  <h1>2</h1>
                 </div>
               </Column>
             </Row>
@@ -46,17 +46,17 @@ class App extends PureComponent {
             <Row>
               <Column>
                 <div className={'content'}>
-                  <h1>Hihihi</h1>
+                  <h1>3</h1>
                 </div>
               </Column>
               <Column>
                 <div className={'content'}>
-                  <h1>Hohoho</h1>
+                  <h1>4</h1>
                 </div>
               </Column>
               <Column>
                 <div className={'content'}>
-                  <h1>Huhuhu</h1>
+                  <h1>5</h1>
                 </div>
               </Column>
             </Row>
